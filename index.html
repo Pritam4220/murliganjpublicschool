@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murliganj Public School | Residential School, Murliganj, Bihar</title>
+<meta name="description" content="Murliganj Public School – a residential school based on CBSE curriculum in Kashipur, Murliganj, Madhepura, Bihar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2a5c;
+    --navy-2: #173b7a;
+    --red: #d62839;
+    --gold: #f5b700;
+    --cream: #fff8ec;
+    --ink: #1d2433;
+    --muted: #5b6475;
+    --line: #e6e8ee;
+    --white: #ffffff;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(15, 42, 92, .12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .container { width: min(1180px, 100% - 32px); margin-inline: auto; }
+  .hi { font-family: 'Noto Sans Devanagari', sans-serif; }
+
+  /* Top bar */
+  .topbar { background: var(--navy); color: #dfe6f5; font-size: .85rem; }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; flex-wrap: wrap; }
+  .topbar a:hover { color: var(--gold); }
+  .topbar .admission-badge { background: var(--gold); color: var(--navy); font-weight: 700; padding: 2px 10px; border-radius: 99px; }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header .container { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo { width: 52px; height: 52px; border-radius: 50%; background: var(--navy); display: grid; place-items: center; border: 3px solid var(--gold); flex-shrink: 0; }
+  .logo span { color: var(--gold); font-weight: 800; font-size: 1.05rem; letter-spacing: .5px; }
+  .brand h1 { font-size: 1.15rem; line-height: 1.15; color: var(--navy); font-weight: 800; }
+  .brand small { display: block; font-size: .72rem; color: var(--red); font-weight: 600; letter-spacing: .4px; text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 26px; align-items: center; }
+  nav a { font-weight: 500; font-size: .95rem; color: var(--ink); position: relative; }
+  nav a:not(.btn)::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--red); transition: width .25s; }
+  nav a:not(.btn):hover::after { width: 100%; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 99px; font-weight: 600; font-size: .95rem; transition: transform .2s, box-shadow .2s, background .2s; cursor: pointer; border: none; font-family: inherit; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-red { background: var(--red); color: #fff; box-shadow: 0 8px 20px rgba(214,40,57,.3); }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-outline { border: 2px solid #fff; color: #fff; }
+  .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .menu-toggle span { display: block; width: 26px; height: 3px; background: var(--navy); margin: 5px 0; border-radius: 2px; transition: .3s; }
+
+  /* Hero */
+  .hero { position: relative; color: #fff; overflow: hidden;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(245,183,0,.25), transparent 40%),
+      linear-gradient(135deg, rgba(15,42,92,.95) 0%, rgba(23,59,122,.88) 55%, rgba(33,83,168,.75) 100%),
+      url('images/assembly.jpg') center/cover no-repeat; }
+  .hero::before { content: ''; position: absolute; inset: 0; opacity: .08;
+    background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 22px 22px; }
+  .hero .container { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 80px 0 100px; }
+  .eyebrow { display: inline-block; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); padding: 6px 14px; border-radius: 99px; font-size: .82rem; margin-bottom: 18px; }
+  .hero h2 { font-size: clamp(2rem, 4.5vw, 3.3rem); line-height: 1.12; font-weight: 800; margin-bottom: 18px; }
+  .hero h2 em { font-style: normal; color: var(--gold); }
+  .hero p { font-size: 1.08rem; color: #d7e0f3; max-width: 540px; margin-bottom: 30px; }
+  .hero .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-card { background: #fff; color: var(--ink); border-radius: 20px; padding: 10px; box-shadow: 0 30px 60px rgba(0,0,0,.3); transform: rotate(1.5deg); }
+  .signboard { border-radius: 14px; overflow: hidden; background: #1e4fb0; color: #fff; text-align: center; padding: 26px 18px; border: 4px solid #e8edf7; }
+  .signboard .res { background: var(--red); display: inline-block; padding: 3px 16px; font-weight: 700; letter-spacing: 3px; font-size: .8rem; border-radius: 4px; }
+  .signboard h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: #ffe66d; margin: 10px 0 6px; letter-spacing: 1px; text-shadow: 2px 2px 0 #0d2d6e; }
+  .signboard .cbse { background: #fff; color: var(--red); display: inline-block; padding: 4px 14px; font-weight: 700; border-radius: 4px; font-size: .9rem; }
+  .signboard .addr { margin-top: 10px; font-size: .82rem; color: #cfe0ff; }
+  .hero-card .caption { display: flex; justify-content: space-between; align-items: center; padding: 12px 8px 4px; font-size: .9rem; }
+  .stars { color: var(--gold); letter-spacing: 2px; }
+  .wave { position: absolute; bottom: -1px; left: 0; width: 100%; height: 60px; }
+
+  /* Stats */
+  .stats { margin-top: -50px; position: relative; z-index: 2; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+  .stat { padding: 26px 20px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat strong { display: block; font-size: 1.9rem; color: var(--navy); font-weight: 800; }
+  .stat span { color: var(--muted); font-size: .9rem; }
+
+  /* Sections */
+  section { padding: 90px 0; }
+  .section-head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
+  .section-head .tag { color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; }
+  .section-head h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: var(--navy); line-height: 1.2; margin: 8px 0 12px; }
+  .section-head p { color: var(--muted); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .about-visual { position: relative; }
+  .photo { border-radius: 18px; aspect-ratio: 4/3; display: grid; place-items: center; color: #fff; font-weight: 600; text-align: center; padding: 20px; position: relative; overflow: hidden; }
+  .photo svg { width: 64px; height: 64px; opacity: .85; margin: 0 auto 8px; }
+  .photo.img { padding: 0; background: #ddd; }
+  .photo.img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .photo.img:hover img { transform: scale(1.06); }
+  .photo.img .label { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 14px; text-align: left; font-size: .98rem;
+    background: linear-gradient(transparent, rgba(10,25,55,.85)); }
+  .card-img { margin: -32px -28px 20px; height: 180px; overflow: hidden; border-radius: 10px 10px 0 0; }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .credits { font-size: .72rem; color: #7f8ba6; margin-top: 8px; }
+  .credits a { text-decoration: underline; }
+  .p1 { background: linear-gradient(135deg, #3a7bd5, #00d2ff); }
+  .p2 { background: linear-gradient(135deg, #f7971e, #ffd200); }
+  .p3 { background: linear-gradient(135deg, #d62839, #ff6b6b); }
+  .p4 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+  .p5 { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+  .p6 { background: linear-gradient(135deg, #0f2a5c, #2153a8); }
+  .about-visual .floating { position: absolute; bottom: -24px; right: -18px; background: var(--gold); color: var(--navy); padding: 18px 22px; border-radius: 16px; box-shadow: var(--shadow); font-weight: 700; line-height: 1.2; }
+  .about-visual .floating strong { font-size: 1.6rem; display: block; }
+  .about-text .tag { color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; }
+  .about-text h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--navy); line-height: 1.2; margin: 8px 0 16px; }
+  .about-text p { color: var(--muted); margin-bottom: 16px; }
+  .checks { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin: 22px 0 28px; }
+  .checks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; font-size: .95rem; }
+  .checks li::before { content: '✓'; background: #e8f6ee; color: #12a150; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: .75rem; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+
+  /* Academics */
+  .academics { background: var(--cream); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .card { background: #fff; border-radius: var(--radius); padding: 32px 28px; box-shadow: 0 4px 16px rgba(0,0,0,.05); border-top: 5px solid var(--navy); transition: transform .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+  .card:nth-child(2) { border-top-color: var(--red); }
+  .card:nth-child(3) { border-top-color: var(--gold); }
+  .card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+  .card h3 { color: var(--navy); font-size: 1.25rem; margin-bottom: 4px; }
+  .card .classes { color: var(--red); font-weight: 600; font-size: .88rem; margin-bottom: 12px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+
+  /* Facilities */
+  .fac-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .fac { text-align: center; padding: 30px 18px; border-radius: var(--radius); border: 1px solid var(--line); transition: .25s; }
+  .fac:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .fac:hover p { color: #c9d4ec; }
+  .fac .ic { width: 66px; height: 66px; border-radius: 50%; background: #eef3fc; display: grid; place-items: center; margin: 0 auto 14px; font-size: 1.8rem; }
+  .fac h4 { font-size: 1.05rem; margin-bottom: 6px; }
+  .fac p { font-size: .88rem; color: var(--muted); }
+
+  /* Notice + Why */
+  .split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; }
+  .why { background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: #fff; border-radius: 20px; padding: 40px; }
+  .why h3 { font-size: 1.6rem; margin-bottom: 18px; }
+  .why-item { display: flex; gap: 16px; margin-bottom: 20px; }
+  .why-item .n { background: var(--gold); color: var(--navy); font-weight: 800; width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; }
+  .why-item h5 { font-size: 1rem; }
+  .why-item p { color: #c9d4ec; font-size: .9rem; }
+  .notice { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+  .notice-head { background: var(--red); color: #fff; padding: 16px 24px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+  .notice-body { height: 340px; overflow: hidden; position: relative; }
+  .notice-list { list-style: none; animation: scroll 18s linear infinite; }
+  .notice-body:hover .notice-list { animation-play-state: paused; }
+  .notice-list li { padding: 16px 24px; border-bottom: 1px dashed var(--line); }
+  .notice-list .date { font-size: .78rem; font-weight: 700; color: var(--red); }
+  .notice-list p { font-size: .93rem; }
+  .new { background: var(--gold); color: var(--navy); font-size: .65rem; font-weight: 800; padding: 1px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+  @keyframes scroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+
+  /* Gallery */
+  .gallery { background: #f6f8fc; }
+  .gal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .gal-grid .photo { aspect-ratio: 4/3; transition: transform .3s; cursor: pointer; }
+  .gal-grid .photo:hover { transform: scale(1.03); }
+  .lightbox { position: fixed; inset: 0; background: rgba(5,12,30,.92); display: none; align-items: center; justify-content: center; z-index: 100; padding: 16px; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+  .lightbox .cap { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; color: #fff; font-weight: 600; }
+  .lightbox .close { position: absolute; top: 14px; right: 20px; color: #fff; font-size: 2.2rem; background: none; border: none; cursor: pointer; }
+  .gal-note { text-align: center; margin-top: 18px; color: var(--muted); font-size: .85rem; }
+
+  /* Testimonials */
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; position: relative; }
+  .testi::before { content: '“'; position: absolute; top: 4px; right: 20px; font-size: 5rem; color: #eef3fc; font-family: Georgia, serif; line-height: 1; }
+  .testi p { color: var(--muted); margin: 10px 0 18px; font-size: .95rem; position: relative; }
+  .testi .who { display: flex; align-items: center; gap: 12px; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--gold); display: grid; place-items: center; font-weight: 700; }
+  .testi .who strong { display: block; font-size: .95rem; }
+  .testi .who span { font-size: .8rem; color: var(--muted); }
+
+  /* Admission CTA */
+  .cta { background: linear-gradient(120deg, var(--red), #b51d2d); color: #fff; padding: 60px 0; }
+  .cta .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .cta h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+  .cta p { color: #ffdfe2; }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; }
+  .info-box { background: var(--cream); border-radius: 20px; padding: 34px; }
+  .info-row { display: flex; gap: 16px; margin-bottom: 22px; }
+  .info-row .ic { width: 46px; height: 46px; border-radius: 12px; background: var(--navy); color: #fff; display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0; }
+  .info-row h5 { color: var(--navy); font-size: 1rem; }
+  .info-row p, .info-row a { color: var(--muted); font-size: .95rem; }
+  .info-row a:hover { color: var(--red); }
+  .map { border-radius: 16px; overflow: hidden; height: 220px; margin-top: 8px; border: 1px solid var(--line); }
+  .map iframe { width: 100%; height: 100%; border: 0; }
+  form { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 34px; box-shadow: var(--shadow); }
+  form h3 { color: var(--navy); font-size: 1.4rem; margin-bottom: 4px; }
+  form > p { color: var(--muted); font-size: .9rem; margin-bottom: 20px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: .85rem; font-weight: 600; margin-bottom: 6px; }
+  .field input, .field select, .field textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; font-family: inherit; font-size: .95rem; transition: border .2s; background: #fff; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--navy-2); }
+  .form-msg { margin-top: 14px; font-size: .9rem; color: #12a150; font-weight: 600; display: none; }
+
+  /* Footer */
+  footer { background: #0b1f45; color: #b7c3dc; padding: 60px 0 0; font-size: .92rem; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 36px; }
+  footer h4 { color: #fff; margin-bottom: 16px; font-size: 1.05rem; }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 8px; }
+  footer a:hover { color: var(--gold); }
+  .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 40px; padding: 18px 0; text-align: center; font-size: .82rem; }
+
+  /* WhatsApp float */
+  .wa { position: fixed; right: 20px; bottom: 20px; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(37,211,102,.45); z-index: 60; transition: transform .2s; }
+  .wa:hover { transform: scale(1.08); }
+  .wa svg { width: 30px; height: 30px; fill: #fff; }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .hero .container, .about-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+    .hero .container { padding: 60px 0 90px; }
+    .hero-card { max-width: 460px; }
+    .cards, .testi-grid { grid-template-columns: 1fr 1fr; }
+    .fac-grid { grid-template-columns: repeat(2, 1fr); }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+  @media (max-width: 820px) {
+    .menu-toggle { display: block; }
+    nav { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line); max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    nav.open { max-height: 420px; }
+    nav ul { flex-direction: column; gap: 0; padding: 10px 16px 20px; align-items: stretch; }
+    nav li a { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    nav li a.btn { margin-top: 12px; justify-content: center; border: none; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 64px 0; }
+    .cards, .testi-grid, .gal-grid, .checks, .row, .foot-grid { grid-template-columns: 1fr; }
+    .topbar .hide-sm { display: none; }
+    .brand h1 { font-size: 1rem; }
+    .about-visual .floating { right: 10px; }
+    .why, form, .info-box { padding: 24px; }
+    .gal-grid .photo { grid-column: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="container">
+    <div>📞 <a href="tel:+917808510115">+91 78085 10115</a> <span class="hide-sm">&nbsp;|&nbsp; 📍 Kashipur Road, Murliganj, Bihar</span></div>
+    <div><span class="admission-badge">Admissions Open 2027–28</span></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <a href="#home" class="brand">
+      <div class="logo"><span>MPS</span></div>
+      <div>
+        <h1>Murliganj Public School</h1>
+        <small>Residential · Based on CBSE Curriculum</small>
+      </div>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" id="menuBtn"><span></span><span></span><span></span></button>
+    <nav id="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#admission" class="btn btn-red">Apply Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home" style="padding:0">
+  <div class="container">
+    <div>
+      <span class="eyebrow">🎓 Residential School · Murliganj, Madhepura</span>
+      <h2>Building <em>Bright Futures</em> in the Heart of Murliganj</h2>
+      <p>A caring residential school following the CBSE curriculum — nurturing discipline, values and academic excellence from the early years through upper primary.</p>
+      <p class="hi" style="margin-top:-14px;font-size:1rem;">शिक्षा, संस्कार और अनुशासन — एक साथ।</p>
+      <div class="actions">
+        <a href="#admission" class="btn btn-gold">Enquire for Admission →</a>
+        <a href="#about" class="btn btn-outline">Explore School</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="signboard">
+        <span class="res">RESIDENTIAL</span>
+        <h3>MURLIGANJ PUBLIC SCHOOL</h3>
+        <span class="cbse">Based On C.B.S.E Curriculum</span>
+        <div class="addr">Kashipur, Murliganj, Madhepura (Bihar)</div>
+      </div>
+      <div class="caption">
+        <span><strong>Rated 4.1</strong> <span class="stars">★★★★☆</span></span>
+        <span style="color:var(--muted)">13 reviews on Justdial</span>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,70 1080,-10 1440,30 L1440,60 L0,60 Z" fill="#fff"/></svg>
+</section>
+
+<!-- Stats -->
+<div class="container stats">
+  <div class="stats-grid reveal">
+    <div class="stat"><strong>Class 1–8</strong><span>Primary & Upper Primary</span></div>
+    <div class="stat"><strong>CBSE</strong><span>Based Curriculum</span></div>
+    <div class="stat"><strong>Hostel</strong><span>Residential Facility</span></div>
+    <div class="stat"><strong>4.1 ★</strong><span>Parent Rating</span></div>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="photo img">
+        <img src="images/prize-winners.jpg" alt="Murliganj Public School students with medals and certificates">
+      </div>
+      <div class="floating"><strong>Since —</strong>Years of trust</div>
+    </div>
+    <div class="about-text reveal">
+      <span class="tag">About Our School</span>
+      <h2>A Home Away From Home for Every Child</h2>
+      <p>Murliganj Public School is an established primary and upper primary school in Murliganj, Madhepura, offering structured education from Class 1 to Class 8 along with residential (hostel) facilities.</p>
+      <p>We focus on strong fundamentals, English communication, moral values and all-round development — helping children grow into confident, responsible citizens.</p>
+      <ul class="checks">
+        <li>CBSE-based syllabus</li>
+        <li>Residential & day scholars</li>
+        <li>Experienced, caring teachers</li>
+        <li>Safe & disciplined campus</li>
+        <li>Regular tests & PTMs</li>
+        <li>Sports & co-curricular activities</li>
+      </ul>
+      <a href="#contact" class="btn btn-red">Visit the Campus</a>
+    </div>
+  </div>
+</section>
+
+<!-- Academics -->
+<section class="academics" id="academics">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Academics</span>
+      <h2>Learning at Every Stage</h2>
+      <p>A carefully planned curriculum that builds curiosity in young learners and strong concepts in older students.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-img"><img src="images/students-uniform.jpg" alt="Students in school uniform" loading="lazy" style="object-position:center 30%"></div>
+        <div class="icon">🧸</div>
+        <h3>Pre-Primary</h3>
+        <div class="classes">Nursery · LKG · UKG</div>
+        <p>Play-way learning, phonics, numbers, rhymes, drawing and motor-skill activities in a joyful setting.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-img"><img src="images/parade.jpg" alt="Students in a parade" loading="lazy"></div>
+        <div class="icon">📘</div>
+        <h3>Primary</h3>
+        <div class="classes">Class 1 – Class 5</div>
+        <p>Strong foundation in English, Hindi, Mathematics, EVS and Computer, with focus on reading and writing skills.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-img"><img src="images/prize-winners.jpg" alt="Senior students with medals" loading="lazy"></div>
+        <div class="icon">🔬</div>
+        <h3>Upper Primary</h3>
+        <div class="classes">Class 6 – Class 8</div>
+        <p>Science, Social Science, Mathematics and languages taught with practical examples, projects and regular assessment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities -->
+<section id="facilities">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Facilities</span>
+      <h2>Everything Your Child Needs</h2>
+      <p>A supportive environment for study, play and living on campus.</p>
+    </div>
+    <div class="fac-grid">
+      <div class="fac reveal"><div class="ic">🏠</div><h4>Hostel</h4><p>Safe residential stay with supervised study hours.</p></div>
+      <div class="fac reveal"><div class="ic">🍲</div><h4>Hygienic Meals</h4><p>Nutritious, home-style food for boarders.</p></div>
+      <div class="fac reveal"><div class="ic">💻</div><h4>Computer Lab</h4><p>Basic computer education from early classes.</p></div>
+      <div class="fac reveal"><div class="ic">📚</div><h4>Library</h4><p>Story books, reference books and magazines.</p></div>
+      <div class="fac reveal"><div class="ic">⚽</div><h4>Sports</h4><p>Outdoor games, PT and annual sports day.</p></div>
+      <div class="fac reveal"><div class="ic">🎭</div><h4>Cultural Events</h4><p>Independence Day, Annual Function & competitions.</p></div>
+      <div class="fac reveal"><div class="ic">🚌</div><h4>Transport</h4><p>Conveyance for day scholars in nearby areas.</p></div>
+      <div class="fac reveal"><div class="ic">🛡️</div><h4>Safety</h4><p>Secure boundary and attentive staff on campus.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why + Notice board -->
+<section style="padding-top:0">
+  <div class="container split">
+    <div class="why reveal">
+      <h3>Why Parents Choose MPS</h3>
+      <div class="why-item"><div class="n">01</div><div><h5>Personal Attention</h5><p>Manageable class sizes so every child is noticed and guided.</p></div></div>
+      <div class="why-item"><div class="n">02</div><div><h5>Discipline & Values</h5><p>Daily routine, prayer assembly and moral education build character.</p></div></div>
+      <div class="why-item"><div class="n">03</div><div><h5>Residential Care</h5><p>Wardens and teachers look after boarders like family.</p></div></div>
+      <div class="why-item" style="margin-bottom:0"><div class="n">04</div><div><h5>Affordable Quality</h5><p>Quality CBSE-pattern education within reach of local families.</p></div></div>
+    </div>
+    <div class="notice reveal">
+      <div class="notice-head">📢 Notice Board <span style="font-size:.75rem;font-weight:500;opacity:.85">Hover to pause</span></div>
+      <div class="notice-body">
+        <ul class="notice-list" id="notices"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Gallery</span>
+      <h2>Life at Murliganj Public School</h2>
+      <p>Moments from classrooms, celebrations and achievements.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="photo img reveal"><img src="images/prize-winners.jpg" alt="Students with medals and certificates" loading="lazy"><div class="label">🏆 Prize Distribution</div></div>
+      <div class="photo img reveal"><img src="images/independence-day-2020.jpg" alt="Flag hoisting on Independence Day at the school" loading="lazy"><div class="label">🇮🇳 Independence Day</div></div>
+      <div class="photo img reveal"><img src="images/saraswati-puja.jpg" alt="Saraswati Puja decoration at the school" loading="lazy"><div class="label">🌸 Saraswati Puja</div></div>
+      <div class="photo img reveal"><img src="images/assembly.jpg" alt="Students in assembly" loading="lazy"><div class="label">🙏 Assembly</div></div>
+      <div class="photo img reveal"><img src="images/sports-race.jpg" alt="Running race on the school campus" loading="lazy"><div class="label">🏃 Sports Day</div></div>
+      <div class="photo img reveal"><img src="images/guests-teachers.jpg" alt="Guests and teachers at a school function" loading="lazy"><div class="label">🎖️ Guests &amp; Teachers</div></div>
+      <div class="photo img reveal"><img src="images/students-uniform.jpg" alt="Students in school uniform" loading="lazy" style="object-position:center 30%"><div class="label">👧 Our Students</div></div>
+      <div class="photo img reveal"><img src="images/parade.jpg" alt="Students in a parade" loading="lazy"><div class="label">🚩 March Past</div></div>
+      <div class="photo img reveal"><img src="images/flag-ceremony.jpg" alt="Flag ceremony with guests" loading="lazy"><div class="label">🎉 Flag Ceremony</div></div>
+      <div class="photo img reveal"><img src="images/teacher-students.jpg" alt="Teacher with students" loading="lazy" style="object-position:center 20%"><div class="label">👨‍🏫 Teacher &amp; Students</div></div>
+      <div class="photo img reveal" style="grid-column:span 2"><img src="images/assembly.jpg" alt="Whole school assembly" loading="lazy" style="object-position:center 35%"><div class="label">🏫 Our School Family</div></div>
+    </div>
+    <p class="gal-note">Click any photo to view it full size.</p>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Testimonials</span>
+      <h2>What Parents Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal"><span class="stars">★★★★★</span><p>Sample review: My child's English and discipline have improved a lot. Teachers are very supportive.</p><div class="who"><div class="avatar">P</div><div><strong>Parent Name</strong><span>Parent of Class 4 student</span></div></div></div>
+      <div class="testi reveal"><span class="stars">★★★★☆</span><p>Sample review: Good hostel facility and food. We feel our son is safe and well looked after.</p><div class="who"><div class="avatar">P</div><div><strong>Parent Name</strong><span>Parent of hostel student</span></div></div></div>
+      <div class="testi reveal"><span class="stars">★★★★★</span><p>Sample review: Regular tests and parent meetings keep us informed about our daughter's progress.</p><div class="who"><div class="avatar">P</div><div><strong>Parent Name</strong><span>Parent of Class 7 student</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="container">
+    <div>
+      <h2>Admissions Open for Session 2027–28</h2>
+      <p>Limited seats available for hostel and day scholars. Visit the school or call us today.</p>
+    </div>
+    <a href="tel:+917808510115" class="btn btn-gold">📞 Call 78085 10115</a>
+  </div>
+</div>
+
+<!-- Contact / Admission -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Contact & Admission</span>
+      <h2>Get in Touch</h2>
+      <p>Have a question about admission, fees or hostel? Send an enquiry and we'll reach out.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="info-box reveal">
+        <div class="info-row"><div class="ic">📍</div><div><h5>Address</h5><p>Kashipur Road, Ward No. 01, Murliganj,<br>Madhepura, Bihar – 852122</p></div></div>
+        <div class="info-row"><div class="ic">📞</div><div><h5>Phone</h5><a href="tel:+917808510115">+91 78085 10115</a></div></div>
+        <div class="info-row"><div class="ic">🕘</div><div><h5>Office Hours</h5><p>Mon – Sat: 8:00 AM – 2:00 PM</p></div></div>
+        <div class="map">
+          <iframe loading="lazy" title="School location" src="https://maps.google.com/maps?q=Murliganj%20Public%20School%2C%20Kashipur%20Rd%2C%20Murliganj%2C%20Bihar%20852122&z=15&output=embed"></iframe>
+        </div>
+      </div>
+      <form id="admission" class="reveal" onsubmit="return sendEnquiry(event)">
+        <h3>Admission Enquiry</h3>
+        <p>Your enquiry opens in WhatsApp, ready to send to the school.</p>
+        <div class="row">
+          <div class="field"><label for="sname">Student Name</label><input id="sname" required placeholder="Child's full name"></div>
+          <div class="field"><label for="pname">Parent Name</label><input id="pname" required placeholder="Father / Mother"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="phone">Mobile Number</label><input id="phone" type="tel" required pattern="[0-9]{10}" placeholder="10-digit number"></div>
+          <div class="field"><label for="cls">Class Applying For</label>
+            <select id="cls" required>
+              <option value="">Select class</option>
+              <option>Nursery</option><option>LKG</option><option>UKG</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option>
+              <option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="type">Admission Type</label>
+          <select id="type"><option>Day Scholar</option><option>Hostel (Residential)</option></select>
+        </div>
+        <div class="field"><label for="msg">Message (optional)</label><textarea id="msg" rows="3" placeholder="Any question about fees, hostel, transport..."></textarea></div>
+        <button class="btn btn-red" type="submit" style="width:100%;justify-content:center">Send Enquiry via WhatsApp</button>
+        <div class="form-msg" id="formMsg">✓ Opening WhatsApp…</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container foot-grid">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <div class="logo"><span>MPS</span></div>
+        <div><h1 style="color:#fff">Murliganj Public School</h1><small style="color:var(--gold)">Residential · CBSE Curriculum</small></div>
+      </div>
+      <p>Quality education with values for the children of Murliganj and surrounding villages.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Admissions</h4>
+      <ul>
+        <li><a href="#admission">Enquiry Form</a></li>
+        <li><a href="#contact">Visit Campus</a></li>
+        <li><a href="#facilities">Hostel Info</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li>📍 Kashipur Rd, Murliganj, Bihar 852122</li>
+        <li>📞 <a href="tel:+917808510115">+91 78085 10115</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© <span id="yr"></span> Murliganj Public School · Demo website
+    <div class="credits">Photos: Murliganj Public School's Google Maps listing.</div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/917808510115" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1 1.1-3.9-.3-.4c-1.1-1.8-1.7-3.8-1.7-5.9C5.1 10 10 5.2 16 5.2S26.9 10 26.9 16 22 26.6 16 26.6zm6-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+  // Mobile menu
+  const nav = document.getElementById('nav');
+  document.getElementById('menuBtn').addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // Notice board (list duplicated for seamless scroll)
+  const notices = [
+    ['Oct 2026', 'Admission enquiries open for session 2027–28 (Nursery to Class 8).', true],
+    ['Oct 2026', 'Chhath Puja holidays — school remains closed as per notice.', true],
+    ['Nov 2026', 'Half-yearly exam results & Parent-Teacher Meeting.', false],
+    ['Nov 2026', "Children's Day celebration on 14th November.", false],
+    ['Dec 2026', 'Annual Sports Day — registrations with class teachers.', false],
+    ['Jan 2027', 'Republic Day programme & prize distribution.', false],
+  ];
+  const html = notices.map(([d, t, isNew]) =>
+    `<li><div class="date">${d}${isNew ? '<span class="new">NEW</span>' : ''}</div><p>${t}</p></li>`).join('');
+  document.getElementById('notices').innerHTML = html + html;
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Enquiry → WhatsApp
+  function sendEnquiry(e) {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const text = `Admission Enquiry - Murliganj Public School\n\nStudent: ${v('sname')}\nParent: ${v('pname')}\nMobile: ${v('phone')}\nClass: ${v('cls')}\nType: ${v('type')}\nMessage: ${v('msg') || '-'}`;
+    document.getElementById('formMsg').style.display = 'block';
+    window.open('https://wa.me/917808510115?text=' + encodeURIComponent(text), '_blank');
+    return false;
+  }
+
+  // Gallery lightbox
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.innerHTML = '<button class="close" aria-label="Close">×</button><img alt=""><div class="cap"></div>';
+  document.body.appendChild(lb);
+  document.querySelectorAll('.gal-grid .photo').forEach(p => p.addEventListener('click', () => {
+    const img = p.querySelector('img');
+    lb.querySelector('img').src = img.src;
+    lb.querySelector('.cap').textContent = p.querySelector('.label').textContent;
+    lb.classList.add('open');
+  }));
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
